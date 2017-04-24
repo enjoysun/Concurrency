@@ -24,7 +24,7 @@ namespace asyncdemo
             var progress = new Progress<ProgressPartialResult>();
             progress.ProgressChanged += (sender, e) =>
             {
-                Console.WriteLine(e.Current / e.Total);
+                Console.WriteLine(e.Current / e.Total * 100 + "%");
             };
             //work.MyMethodAsync(progress).Wait();
             Task<string> str = work.Getasyncstringwithurl("https://baidu.com", progress);
